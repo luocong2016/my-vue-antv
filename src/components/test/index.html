@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link
+      rel="stylesheet"
+      href="../../../node_modules/ant-design-vue/dist/reset.css"
+    />
+    <script src="../../../dist/my-lib.table.umd.js"></script>
+    <title>Table</title>
+  </head>
+  <body>
+    <div
+      id="x9"
+      start-position="left"
+      columns='[{"name":"Name","dataIndex":"name","key":"name"},{"title":"Age","dataIndex":"age","key":"age"},{"title":"Address","dataIndex":"address","key":"address"},{"title":"Tags","key":"tags","dataIndex":"tags"},{"title":"Action","key":"action"}]'
+      data-source='[{"key":"1","name":"John Brown","age":32,"address":"New York No. 1 Lake Park","tags":["nice","developer"]},{"key":"2","name":"Jim Green","age":42,"address":"London No. 1 Lake Park","tags":["loser"]},{"key":"3","name":"Joe Black","age":32,"address":"Sidney No. 1 Lake Park","tags":["cool","teacher"]}]'
+    >
+      x9
+    </div>
+
+    <div
+      id="x10"
+      start-position="left"
+      columns='[{"name":"Name","dataIndex":"name","key":"name"},{"title":"Age","dataIndex":"age","key":"age"},{"title":"Address","dataIndex":"address","key":"address"},{"title":"Tags","key":"tags","dataIndex":"tags"},{"title":"Action","key":"action"}]'
+      data-source='[{"key":"1","name":"John Brown1","age":32,"address":"New York No. 1 Lake Park","tags":["nice","developer"]},{"key":"2","name":"Jim Green","age":42,"address":"London No. 1 Lake Park","tags":["loser"]},{"key":"3","name":"Joe Black","age":32,"address":"Sidney No. 1 Lake Park","tags":["cool","teacher"]}]'
+    >
+      x9
+    </div>
+    <script>
+      const container9 = document.getElementById('x9')
+      Table(container9)
+
+      const container10 = document.getElementById('x10')
+      Table(container10)
+    </script>
+  </body>
+</html>
