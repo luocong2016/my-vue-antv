@@ -10,6 +10,7 @@
     "build:comp": "vite build --config comp.config.ts --mode production"
   },
   "dependencies": {
+    "@ant-design/icons-vue": "^7.0.1",
     "@antv/g2": "^5.2.10",
     "ant-design-vue": "4.x",
     "axios": "^1.7.9",

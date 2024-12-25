@@ -43,21 +43,20 @@
 
 <body>
   <div id="x9" start-position="left"
-    columns='[{"name":"Name","dataIndex":"name","key":"name"},{"title":"Age","dataIndex":"age","key":"age"},{"title":"Address","dataIndex":"address","key":"address"},{"title":"Tags","key":"tags","dataIndex":"tags"},{"title":"Action","key":"action"}]'
+    columns='[{"title":"Name","dataIndex":"name","key":"name"},{"title":"Age","dataIndex":"age","key":"age"},{"title":"Address","dataIndex":"address","key":"address"},{"title":"Tags","key":"tags","dataIndex":"tags"},{"title":"Action","key":"action"}]'
     data-source='[{"key":"1","name":"John Brown","age":32,"address":"New York No. 1 Lake Park","tags":["nice","developer"]},{"key":"2","name":"Jim Green","age":42,"address":"London No. 1 Lake Park","tags":["loser"]},{"key":"3","name":"Joe Black","age":32,"address":"Sidney No. 1 Lake Park","tags":["cool","teacher"]}]'>
     x9
   </div>
 
-  <div id="x10" start-position="left"
+  <!-- <div id="x10" start-position="left"
     columns='[{"name":"Name","dataIndex":"name","key":"name"},{"title":"Age","dataIndex":"age","key":"age"},{"title":"Address","dataIndex":"address","key":"address"},{"title":"Tags","key":"tags","dataIndex":"tags"},{"title":"Action","key":"action"}]'
     data-source='[{"key":"1","name":"John Brown1","age":32,"address":"New York No. 1 Lake Park","tags":["nice","developer"]},{"key":"2","name":"Jim Green","age":42,"address":"London No. 1 Lake Park","tags":["loser"]},{"key":"3","name":"Joe Black","age":32,"address":"Sidney No. 1 Lake Park","tags":["cool","teacher"]}]'>
     x9
-  </div>
+  </div> -->
 
   <div id="error-container"></div>
-  <button onclick="causeError()">Cause Error</button>
 
-  <script>
+  <script defer>
     document.addEventListener('DOMContentLoaded', function () {
       // 禁用所有拖拽相关的事件
       ['dragstart', 'drag', 'dragenter', 'dragover', 'dragleave', 'drop', 'dragend'].forEach(function (eventName) {
@@ -73,13 +72,12 @@
       try {
         const container9 = document.getElementById('x9')
         Table(container9)
-
-        const container10 = document.getElementById('x10')
-        Table(container10)
       } catch (error) {
         displayError(error);
       }
     }
+
+    causeError()
 
     // 全局错误处理函数
     window.onerror = function (message, source, lineno, colno, error) {
