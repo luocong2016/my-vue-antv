@@ -21,6 +21,15 @@
         return this.map(callback, thisArg).flat();
       };
     }
+
+
+    const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
+    Element.prototype.getBoundingClientRect = function () {
+      const rects = originalGetBoundingClientRect.call(this);
+      rects.x = rects.x || rects.left;
+      rects.y = rects.y || rects.top;
+      return rects;
+    }
   </script>
   <base href="http://192.168.21.140:5500/dist/" />
   <link rel="stylesheet" href="reset.min.css" />
@@ -57,6 +66,8 @@
   <div id="error-container"></div>
 
   <script defer>
+    console.log('getBoundingClientRect', document.body.getBoundingClientRect());
+
     document.addEventListener('DOMContentLoaded', function () {
       // 禁用所有拖拽相关的事件
       ['dragstart', 'drag', 'dragenter', 'dragover', 'dragleave', 'drop', 'dragend'].forEach(function (eventName) {
